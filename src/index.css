@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global resets ── */
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 !important;
+  overflow-x: hidden;
+}
+
+/* ── Fade animation (sliders) ── */
+@keyframes fade {
+  from { opacity: 0.4; }
+  to   { opacity: 1; }
+}
+.fade-slide {
+  animation: fade 1.5s ease;
+}
+
+/* ── Company site ── */
+.company-site {
+  direction: rtl;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 16px;
+}
+
+/* Navbar transparent state: logo & links white */
+.company-navbar-transparent .nav-logo i,
+.company-navbar-transparent .nav-logo b {
+  color: white;
+}
+.company-navbar-transparent .nav-link {
+  color: white;
+}
+.company-navbar-transparent .nav-link:hover {
+  color: #03a9f4;
+  background-color: white;
+}
+.company-navbar-transparent .nav-link.active {
+  color: #03a9f4 !important;
+  background-color: white !important;
+}
+
+/* Navbar scrolled state */
+.company-navbar-scrolled .nav-logo i,
+.company-navbar-scrolled .nav-logo b {
+  color: #03a9f4;
+}
+.company-navbar-scrolled .nav-link {
+  color: #03a9f4;
+}
+.company-navbar-scrolled .nav-link:hover {
+  color: white;
+  background-color: #03a9f4;
+}
+.company-navbar-scrolled .nav-link.active {
+  color: white !important;
+  background-color: #03a9f4 !important;
+}
+
+/* Mobile menu open (phone-nav show) */
+.company-navbar-phone .nav-logo i,
+.company-navbar-phone .nav-logo b {
+  color: #03a9f4;
+}
+.company-navbar-phone .phone-menu-icon {
+  color: #03a9f4;
+}
+
+/* Heading underline decoration */
+.section-title::before {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  left: 0;
+  margin: auto;
+  width: 28px;
+  height: 4px;
+  background-color: #03a9f4;
+}
+
+/* ── Blog site ── */
+.blog-site {
+  direction: rtl;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 16px;
+  background-color: #fbfbfb;
+}
+
+/* ── Personal site ── */
+.personal-site {
+  direction: rtl;
+  font-family: 'Almarai', sans-serif;
+  font-size: 16px;
+  background-color: #eaeaea;
+}
+
+/* Review quote pseudo-element */
+.review-quote::after {
+  content: '"';
+  position: absolute;
+  top: 11px;
+  color: #848484;
+  right: -15px;
+  height: 40px;
+  width: 20px;
+  font-size: 77px;
+}
+
+/* skill bar: fills right-to-left */
+.skill-bar-fill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  transition: background-color 0.5s ease;
+}
+
+/* Lightbox overlay */
+.lightbox {
+  position: fixed;
+  overflow-y: auto;
+  top: -100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.88);
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  padding: 70px 20px 50px;
+  transition: top 0.5s ease;
+}
+.lightbox.lightbox-open {
+  top: 0;
+}
